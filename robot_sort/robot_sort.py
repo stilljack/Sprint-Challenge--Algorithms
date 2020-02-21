@@ -101,15 +101,16 @@ class SortingRobot:
         self.swap_item()
         self.move_right()
         print(f"robot picked up {self._item}")
-        sorting=True
         for i in self._list:
-            print(i)
+            self.set_light_on()
             while self.can_move_right():
                 print(f"begin while, holding item: {self._item}")
                 if self.compare_item() == -1:
                     print(f"held item is less than {self._list[self._position]}")
                     print(f"swapping item")
                     self.swap_item()
+                    self.set_light_off()
+                    self.move_right()
                 elif self.compare_item() == 1:
                     print(f"held item is greater then {self._list[self._position]}")
                     print(f"move right")
@@ -127,8 +128,12 @@ class SortingRobot:
                     print(f"held item is less than {self._list[self._position]}")
                     print(f"swapping item")
                     self.swap_item()
+                    self.set_light_off()
+                    self.move_left()
                 else:
                     self.move_left()
+            if self.light_is_on():
+                break
         self.swap_item()
         return self._list
 
