@@ -101,21 +101,39 @@ class SortingRobot:
         self.swap_item()
         self.move_right()
         print(f"robot picked up {self._item}")
-        while self.can_move_right():
-            print(f"begin while, holding item: {self._item}")
-            if self.compare_item() == -1:
+        sorting=True
+        for i in self._list:
+            print(i)
+            while self.can_move_right():
+                print(f"begin while, holding item: {self._item}")
+                if self.compare_item() == -1:
+                    print(f"held item is less than {self._list[self._position]}")
+                    print(f"swapping item")
+                    self.swap_item()
+                elif self.compare_item() == 1:
+                    print(f"held item is greater then {self._list[self._position]}")
+                    print(f"move right")
+                    self.move_right()
+                else:
+                    self.move_right()
+                print(f"self.list = {self._list}")
+            while self.can_move_left():
+                print(f"begin while, holding item: {self._item}")
+                if self.compare_item() == -1:
+                    print(f"held item is greater then {self._list[self._position]}")
+                    print(f"move right")
+                    self.move_left()
+                elif self.compare_item() == 1:
+                    print(f"held item is less than {self._list[self._position]}")
+                    print(f"swapping item")
+                    self.swap_item()
+                else:
+                    self.move_left()
+        self.swap_item()
+        return self._list
 
-                print(f"held item is less than {self._list[self._position]}")
-                self.swap_item()
-            elif self.compare_item() == 1:
-                print(f"held item is greater then {self._list[self._position]}")
-            else:
-                self.move_right()
-            print(f"self.list = {self._list}")
 
 
-
-        pass
 
 
 if __name__ == "__main__":
