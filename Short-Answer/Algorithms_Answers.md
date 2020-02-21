@@ -22,7 +22,7 @@ c) bunny ears is a recursive function which complicates matters as depending on 
    binary search in plain english works by finding a middle or pivot point, generally in the middle of the array to be searched and checking if we need to go to right or left in the array to find the target, i.e. if the answer is higher or lower than the pivot index chosen -- thus we can choose a floor either at the middle point, if it breaks, we know we must go lower -- if it breaks we can then choose a pivot point some where in the middle of the lower half of the building's floors and further split and search recursively from there.
 
    e.g. if a building has a hundre floors, we choose fifty, throw an egg, it breaks, we know that 1-49 is the only possible valid choices so we try at 25, egg breaks, split again, eventually we get down to say 7 and it is succesful (i.e. we know that the target floor is now higher) so we then split the other way, etc, etc, etc until we have the highest floor where it doesnt break..
-
+        ## O(Log n) [not O(n Log n)]
      ref code from assignment this week:
      def binary_search(arr, target):
     if len(arr) == 0:

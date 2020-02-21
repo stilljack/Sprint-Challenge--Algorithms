@@ -35,6 +35,13 @@ def count_th(word:str,result=0):
         return count_th(word[2:len(word)],result)
 
 
-
+def count_th(word):
+  if len(word) < 2:
+    return 0
+  else:
+    if word[0:2] == "th":
+      return 1 + count_th(word[2:])
+    else:
+      return count_th(word[1:])
 
 
