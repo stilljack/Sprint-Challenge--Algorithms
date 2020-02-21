@@ -93,12 +93,6 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # Fill this out
-      #  print(f"init robot is holding {self._item}")
-
 
         self.set_light_on()
         while self.light_is_on():
