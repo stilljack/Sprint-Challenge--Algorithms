@@ -97,6 +97,24 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
+        print(f"init robot is holding {self._item}")
+        self.swap_item()
+        self.move_right()
+        print(f"robot picked up {self._item}")
+        while self.can_move_right():
+            print(f"begin while, holding item: {self._item}")
+            if self.compare_item() == -1:
+
+                print(f"held item is less than {self._list[self._position]}")
+                self.swap_item()
+            elif self.compare_item() == 1:
+                print(f"held item is greater then {self._list[self._position]}")
+            else:
+                self.move_right()
+            print(f"self.list = {self._list}")
+
+
+
         pass
 
 
