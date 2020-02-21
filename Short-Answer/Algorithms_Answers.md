@@ -27,9 +27,9 @@ c) bunny ears is a recursive function which complicates matters as depending on 
      def binary_search(arr, target):
     if len(arr) == 0:
     return -1 # array empty
-  low = 0
-      high = len(arr)-1
-    while low <= high:
+    low = 0
+       high = len(arr)-1
+     while low <= high:
         mid = low + (high - low)//2
         print(f"target = {target}")
         print(f"low={low} high ={high} mid = {mid} arr[mid] = {arr[mid]}")
