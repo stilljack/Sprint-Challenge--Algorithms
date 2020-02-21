@@ -55,6 +55,7 @@ class SortingRobot:
         of it.
         This will increment the time counter by 1.
         """
+        #hahah you're joking!! this is how we'r calculating it?? by how many instructions we give to the robots??
         self._time += 1
         # Swap the held item with the list item at the robot's position
         self._item, self._list[self._position] = self._list[self._position], self._item
@@ -101,15 +102,17 @@ class SortingRobot:
                 self.swap_item()
                 self.move_right()
                 if self.compare_item() ==1:
-                    self.swap_item()
                     self.set_light_on()
+                    self.swap_item()
                     self.move_left()
                     self.swap_item()
                     self.move_right()
+
                 elif self.compare_item() <= 0:
                     self.move_left()
                     self.swap_item()
                     self.move_right()
+
             while self.can_move_left():
                 self.move_left()
 
