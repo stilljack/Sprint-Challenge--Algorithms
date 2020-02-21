@@ -19,7 +19,7 @@ def count_th(word:str,result=0):
     if len(word) < 3:
         chunk = word[0:2]
         print(f"chunk = {chunk}")
-        if chunk=="th" or chunk =="ht":
+        if chunk=="th":
             result+=1
         print(f"final count = {result}")
         return count_th(word[2:len(word)],result)
@@ -27,9 +27,9 @@ def count_th(word:str,result=0):
         chunk = word[0:2]
         chunk2 = word[1:3]
         print(f"chunk = {chunk}")
-        if chunk=="th" or chunk =="ht":
+        if chunk=="th":
             result+=1
-        elif chunk2=="th" or chunk =="ht":
+        elif chunk2=="th":
             result+=1
             return count_th(word[3:len(word)],result)
         return count_th(word[2:len(word)],result)
