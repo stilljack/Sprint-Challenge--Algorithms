@@ -23,13 +23,13 @@ c) bunny ears is a recursive function which complicates matters as depending on 
 
    e.g. if a building has a hundre floors, we choose fifty, throw an egg, it breaks, we know that 1-49 is the only possible valid choices so we try at 25, egg breaks, split again, eventually we get down to say 7 and it is succesful (i.e. we know that the target floor is now higher) so we then split the other way, etc, etc, etc until we have the highest floor where it doesnt break..
 
-   ref code from assignment this week:
-   def binary_search(arr, target):
-  if len(arr) == 0:
+     ref code from assignment this week:
+     def binary_search(arr, target):
+    if len(arr) == 0:
     return -1 # array empty
-  low = 0
-  high = len(arr)-1
-    while low <= high:
+    low = 0
+       high = len(arr)-1
+     while low <= high:
         mid = low + (high - low)//2
         print(f"target = {target}")
         print(f"low={low} high ={high} mid = {mid} arr[mid] = {arr[mid]}")
