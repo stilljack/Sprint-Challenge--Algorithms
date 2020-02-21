@@ -15,4 +15,34 @@ c) bunny ears is a recursive function which complicates matters as depending on 
 
 ## Exercise II
 
+   so our problem space is a n digit array of positive integers (even if you consider say mezanines or 13th floors being missing, there are only whole floors and ultimately the shape of the representation of the floors could be smoothed to being positive integers), we want to find the highest f such that the egg can be thrown off without breaking and we want to break as few eggs as possible so --
+
+   if we take "break as few eggs as possible" and "we have plenty of eggs" to mean we should execute the most effective use of our compute available, without trying to overly cautious and trying to get the highest reasonable floor f -- the most obvious solution is to implement a binary sort, given that buildings are relatively small in number of floors (i.e. sub 200) and all floors are sorted and and positive integers -- our binary search should have a relatively easy time.
+
+   binary search in plain english works by finding a middle or pivot point, generally in the middle of the array to be searched and checking if we need to go to right or left in the array to find the target, i.e. if the answer is higher or lower than the pivot index chosen -- thus we can choose a floor either at the middle point, if it breaks, we know we must go lower -- if it breaks we can then choose a pivot point some where in the middle of the lower half of the building's floors and further split and search recursively from there.
+
+   e.g. if a building has a hundre floors, we choose fifty, throw an egg, it breaks, we know that 1-49 is the only possible valid choices so we try at 25, egg breaks, split again, eventually we get down to say 7 and it is succesful (i.e. we know that the target floor is now higher) so we then split the other way, etc, etc, etc until we have the highest floor where it doesnt break..
+
+   ref code from assignment this week:
+   def binary_search(arr, target):
+  if len(arr) == 0:
+    return -1 # array empty
+  low = 0
+  high = len(arr)-1
+    while low <= high:
+        mid = low + (high - low)//2
+        print(f"target = {target}")
+        print(f"low={low} high ={high} mid = {mid} arr[mid] = {arr[mid]}")
+        if arr[mid] == target:
+          return mid
+
+        # If x is greater, ignore left half
+        elif arr[mid] < target:
+        low = mid + 1
+
+        # If x is smaller, ignore right half
+         else:
+         high = mid - 1
+
+    return -1 # not found
 
