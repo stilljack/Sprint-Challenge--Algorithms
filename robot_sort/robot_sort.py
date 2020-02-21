@@ -120,6 +120,33 @@ class SortingRobot:
 
 
 
+   # Bubble Sort solution
+        # self.set_light_off()
+        # while not self.light_is_on():
+        #     self.set_light_on()
+        #     while self.can_move_right():
+        #         self.swap_item()
+        #         self.move_right()
+        #         if self.compare_item() > 0:
+        #             self.swap_item()
+        #             self.set_light_off()
+        #         self.move_left()
+        #         self.swap_item()
+        #         self.move_right()
+        #     if self.light_is_on():
+        #         break
+        #     self.set_light_on()
+        #     while self.can_move_left():
+        #         self.swap_item()
+        #         self.move_left()
+        #         if self.compare_item() < 0:
+        #             self.swap_item()
+        #             self.set_light_off()
+        #         self.move_right()
+        #         self.swap_item()
+        #         self.move_left()
+
+
 
 #
 # if __name__ == "__main__":
