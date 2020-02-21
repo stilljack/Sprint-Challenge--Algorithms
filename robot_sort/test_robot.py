@@ -1,6 +1,6 @@
 import unittest
 import random
-from robot_sort import *
+from robot_sort.robot_sort import *
 
 class Test(unittest.TestCase):
 
